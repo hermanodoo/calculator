@@ -1,0 +1,23 @@
+
+# Object Oriented Calculator
+
+## Objects Needed
+
+###1. Menu
+	- let's user choose either
+		(1) View History
+		(2) Calculation
+
+###2. Operation
+	- executes calculation
+	- contains:
+		(1) addition
+		(2) subtraction
+		(3) multiplication
+		(4) division
+
+###3. Database
+	- uses ArrayList<String> to store calculation
+	- when called getHistory, prints each item in the ArrayList
+
+### etc. 

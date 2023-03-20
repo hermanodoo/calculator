@@ -1,38 +1,51 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
-import static java.lang.Integer.parseInt;
+import static java.lang.System.exit;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println("계산기 앱");
-        System.out.println("1. 조회\n2. 계산");
-
-        // take input of options
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String choice = br.readLine();
-        Menu menu = new Menu(Integer.parseInt(choice));
 
-        // take in numbers along with operation, repeat if not 1 nor 2
-        while (menu.getOption() < 0) {
-            System.out.println("Type in 1 or 2!");
-            menu.setOption(parseInt(br.readLine()));
+        String equation;
+
+        Menu menu = new Menu();
+        Operation operation = new Operation();
+        Database database = new Database();
+
+
+
+        // Starting Calculator
+        System.out.println("Calculator Initializing...");
+
+        // Checking Input if it's 1 or 2 or 3
+        while(true) {
+            System.out.println("1. History\n2. Calculation\n3. Terminate");
+            menu.setMenuChoice(Integer.parseInt(br.readLine()));
+
+            if (menu.getMenuChoice() >= 1 && menu.getMenuChoice() <= 3) {
+                break;
+            }
+
+            System.out.println("Wrong Input, try again.");
         }
 
-        // take operation as a list, separating with space
-        System.out.println("Input your operation\n(Example: 1 + 3 * 10)");
-        Operation operation = new Operation(br.readLine());
+
+        // using if else to figure out whether to view history or calculation
+        switch(menu.getMenuChoice()) {
+            case 1:
+                database.getHistory();
+
+                case 2:
+                    database.addHistory(br.readLine());
+                    String equation = br.readLine();
+                    operation(br.readLine())
+
+                case 3:
+                    exit(0);
 
 
-        Operation operation = new Operation(br.readLine());
-        while(menu < -1) {
-            int[] numbers
         }
-
-        // return the results with the equation
-
-
     }
 }

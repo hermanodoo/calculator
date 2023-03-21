@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Calculator extends Database {
+public class Calculator {
     private ArrayList<Double> numberList;
     private ArrayList<String> operatorList;
 

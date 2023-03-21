@@ -1,21 +1,56 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class EquationConverter {
-    private final String stringEquation;
-    private String[] equationStringList;
+    private ArrayList<String> equationList;
+    private ArrayList<Double> numbersList;
+    private ArrayList<String> operatorsList;
 
-    EquationConverter(String stringEquation) {
-        this.stringEquation = stringEquation;
+
+
+    // initialize equationList
+    EquationConverter() {
+        equationList = new ArrayList<>();
+        numbersList = new ArrayList<>();
+        operatorsList = new ArrayList<>();
     }
 
-    // take original string input and make it into list
-    public void stringNumbersListToStringEquation() {
-        this.equationStringList = stringEquation.split(" ");
+    // set the Equation
+    public void setEverything(String equationString) {
+        equationList.clear();
+        equationList.addAll(List.of(equationString.split(" ")));
+        setNumbersList();
+        setOperatorsList();
     }
 
-    // check if we can use equation for calculation
-    private boolean checkValidity() {
-        if (equationStringList.length < 3 || equationStringList.length % 2 == 0) {
-            return false;
-        } return true;
+    // get equationList
+    public ArrayList<String> getEquationList() {
+        return equationList;
+    }
+
+
+    // set list of numbers
+    public void setNumbersList() {
+        numbersList = new ArrayList<>();
+        for (int i = 0; i < equationList.size(); i += 2) {
+            numbersList.add(Double.parseDouble(equationList.get(i)));
+        }
+    }
+
+    // set list of operators
+    public void setOperatorsList() {
+        operatorsList = new ArrayList<>();
+        for (int i = 1; i < equationList.size(); i += 2) {
+            operatorsList.add(equationList.get(i));
+        }
+    }
+
+    public ArrayList<Double> getNumbersList() {
+        return numbersList;
+    }
+
+    public ArrayList<String> getOperatorsList() {
+        return operatorsList;
     }
 }
 

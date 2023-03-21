@@ -7,10 +7,11 @@
 	- let's user choose either
 		(1) View History
 		(2) Calculation
+		(3) Exit Program
 
 ###2. Operation
 	- executes calculation
-	- contains:
+	- allows:
 		(1) addition
 		(2) subtraction
 		(3) multiplication
@@ -18,6 +19,9 @@
 
 ###3. Database
 	- uses ArrayList<String> to store calculation
-	- when called getHistory, prints each item in the ArrayList
+	- when called getHistory, prints each item in the ArrayList into String
 
-### etc. 
+###4. EquationConverter
+	- changes string of equation to list
+	- check if the equation is valid
+	- return numbers list and ooperation list

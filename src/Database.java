@@ -15,11 +15,17 @@ public class Database {
         return historyString;
     }
 
+    // add answer to complete your equation
+    public void addAnswerToEquation(int intAnswer) {
+        String stringAnswer = String.valueOf(intAnswer);
+        this.historyList.set(historyList.size() - 1, historyList.get(historyList.size() - 1).concat(" " + stringAnswer));
+    }
+
     // convert historyList to String
     private void ArrayListToString() {
         StringBuilder sb = new StringBuilder();
         for (String oneLineHistory : historyList) {
-            sb.append(this.historyList);
+            sb.append(oneLineHistory.concat("\n"));
         }
         historyString = sb.toString();
     }

@@ -20,6 +20,7 @@ public class Calculator {
                 double result = numbersList.get(i) / numbersList.get(i + 1);
                 if (Double.isInfinite(result)) throw new ArithmeticException("Infinite");
                 if (Double.isNaN(result)) throw new ArithmeticException("NaN");
+                numbersList.set(i + 1, numbersList.get(i) / numbersList.get(i + 1));
                 operatorList.set(i, "+");
                 numbersList.set(i, 0D);
             }

@@ -1,7 +1,6 @@
-# calculator
-
 # Object Oriented Calculator
 
+## Objects Needed
 
 ###1. Menu
 	- let's user choose either
